@@ -25,11 +25,9 @@ def browser(request):                 #This will return the browser value to set
 #It is hook for Adding Environment info to HTML Report
 
 def pytest_configure(config):
-    config._metadata = {
-        "Tester": "Gowtham",
-        "Project Name": "NOPCOMMERCE",
-    }
-
+    config.stash[metadata_key]["Tester"] = "GowthamKarthick"
+    config.stash[metadata_key]["Project_name"] = "NopCommerce"
+    config.stash[metadata_key]["Module_name"] = "Admin_Loginpages"
 
 # It is hook for Delete/Modify Environment info to HTML Report
 

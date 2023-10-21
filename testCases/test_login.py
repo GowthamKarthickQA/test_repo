@@ -54,7 +54,7 @@ class Test_001_Login:
         else:
             self.driver.save_screenshot(".\\Screenshots\\"+"Screenshot2.png")
             self.driver.close()
-            self.logger.info("*********************** Login DashBoardPage is passed *************************************")
+            self.logger.info("*********************** Login DashBoardPage is failed *************************************")
             assert False
 
 
