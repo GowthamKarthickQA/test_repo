@@ -1,6 +1,7 @@
 from selenium import webdriver
 import pytest
 from pytest_metadata.plugin import metadata_key
+import configparser
 
 @pytest.fixture()
 def setup(browser):
@@ -24,9 +25,10 @@ def browser(request):                 #This will return the browser value to set
 #It is hook for Adding Environment info to HTML Report
 
 def pytest_configure(config):
-    config.metadata['ProjectName'] = 'NOPCOMMERCE'
-    config.metadata['ModuleName'] = 'LoginAdminPage'
-    config.metadata['Tester'] = 'GowthamTestProject'
+    config._metadata = {
+        "Tester": "Gowtham",
+        "Project Name": "NOPCOMMERCE",
+    }
 
 
 # It is hook for Delete/Modify Environment info to HTML Report
